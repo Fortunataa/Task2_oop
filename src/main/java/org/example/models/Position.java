@@ -40,18 +40,34 @@ public class Position {
         return new Position(x + dx, y + dy);
     }
 
+    /**
+     * Создает позицию слева от текущей
+     * @return новая позиция Position(x - 1, y)
+     */
     public Position left() {
         return new Position(x - 1, y);
     }
 
+    /**
+     * Создает позицию справа от текущей
+     * @return новая позиция Position(x + 1, y)
+     */
     public Position right() {
         return new Position(x + 1, y);
     }
 
+    /**
+     * Создает позицию сверху от текущей
+     * @return новая позиция Position(x, y - 1)
+     */
     public Position up() {
         return new Position(x, y - 1);
     }
 
+    /**
+     * Создает позицию снизу от текущей
+     * @return новая позиция Position(x, y + 1)
+     */
     public Position down() {
         return new Position(x, y + 1);
     }
