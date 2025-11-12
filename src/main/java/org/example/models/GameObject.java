@@ -11,5 +11,18 @@ public abstract class GameObject {
         this.type = type;
     }
 
+    public abstract boolean canBePlacedObject(Position position, GameBoard board);
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public boolean isDestroyed() {
+        return destroyed;
+    }
 
 }
