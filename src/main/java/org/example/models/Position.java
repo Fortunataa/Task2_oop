@@ -71,4 +71,5 @@ public class Position {
     public Position down() {
         return new Position(x, y + 1);
     }
+
 }
