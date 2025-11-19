@@ -15,6 +15,17 @@ public class GameBoard {
         initializeBoard();
     }
 
+
+    /**
+     * Получает все объекты на поле
+     * @return список всех объектов
+     */
+    public List<GameObject> getObjects() {
+        return new ArrayList<>(objects);
+    }
+
+
+
     /**
      * Создает начальную(пустую) доску
      */
@@ -56,7 +67,28 @@ public class GameBoard {
         return cells[position.getX()][position.getY()] == CellState.EMPTY;
     }
 
+
+    /**
+     * Проверяет, находится ли позиция в поле
+     * @param position позиция объекта
+     * @return true, если позиция находится внутри поля
+     */
     public boolean positionInTheField(Position position) {
         return position.isInPlayingField(size);
     }
+
+
+    /**
+     * Получает состояние клетки в указанной позиции
+     * @param position позиция объекта
+     * @return состояние клетки
+     */
+    public CellState getCellState(Position position) {
+        if (!positionInTheField(position)) {
+            throw new IllegalArgumentException("Позиция вне поля: " + position);
+        }
+        return cells[position.getX()][position.getY()];
+    }
+
+
 }

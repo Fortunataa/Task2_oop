@@ -4,32 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c2b7339-8d3e-4d24-a6ec-05df836c2059" name="Changes" comment="" />
+    <list default="true" id="4c2b7339-8d3e-4d24-a6ec-05df836c2059" name="Changes" comment="добавлены методы в доску, создан класс корабля">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/GameBoard.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Fortunataa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Fortunataa/Task2_oop.git&quot;,
+    &quot;accountId&quot;: &quot;4c8d6cff-efba-4739-9e43-56a8bfcd3f7f&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="35KfeAYKR1e29PZ9FtHvlGTJ1mv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/Kassandra/Desktop/Tasks/Task2_oop/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;functional/models&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Kassandra/Desktop/Tasks/Task2_oop/src/main/java/org/example/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -39,7 +71,91 @@
       <option name="presentableId" value="Default" />
       <updated>1762863779882</updated>
     </task>
+    <task id="LOCAL-00001" summary="реализация класса позиции">
+      <option name="closed" value="true" />
+      <created>1762872959209</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762872959209</updated>
+    </task>
+    <task id="LOCAL-00002" summary="реализация класса позиции">
+      <option name="closed" value="true" />
+      <created>1762873621533</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762873621533</updated>
+    </task>
+    <task id="LOCAL-00003" summary="реализация класса для всех игровых объектов">
+      <option name="closed" value="true" />
+      <created>1762874132054</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762874132054</updated>
+    </task>
+    <task id="LOCAL-00004" summary="состояние клетки на доске">
+      <option name="closed" value="true" />
+      <created>1762877323433</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762877323433</updated>
+    </task>
+    <task id="LOCAL-00005" summary="состояние клетки на доске">
+      <option name="closed" value="true" />
+      <created>1762878757302</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762878757302</updated>
+    </task>
+    <task id="LOCAL-00006" summary="реализация класса доски для морского боя">
+      <option name="closed" value="true" />
+      <created>1762959580729</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762959580729</updated>
+    </task>
+    <task id="LOCAL-00007" summary="текущая реализация класса доски для морского боя">
+      <option name="closed" value="true" />
+      <created>1762962500758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762962500758</updated>
+    </task>
+    <task id="LOCAL-00008" summary="общий класс для объектов на поле">
+      <option name="closed" value="true" />
+      <created>1762962535387</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762962535387</updated>
+    </task>
+    <task id="LOCAL-00009" summary="реализация позиции объекта">
+      <option name="closed" value="true" />
+      <created>1762962563175</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762962563175</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="реализация класса позиции" />
+    <MESSAGE value="реализация класса для всех игровых объектов" />
+    <MESSAGE value="состояние клетки на доске" />
+    <MESSAGE value="реализация класса доски для морского боя" />
+    <MESSAGE value="текущая реализация класса доски для морского боя" />
+    <MESSAGE value="общий класс для объектов на поле" />
+    <MESSAGE value="реализация позиции объекта" />
+    <MESSAGE value="добавлены методы в доску, создан класс корабля" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлены методы в доску, создан класс корабля" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
