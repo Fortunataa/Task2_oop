@@ -90,5 +90,8 @@ public class GameBoard {
         return cells[position.getX()][position.getY()];
     }
 
+    public int getSize() {
+        return size;
+    }
 
 }
