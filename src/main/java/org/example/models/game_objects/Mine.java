@@ -1,6 +1,5 @@
 package org.example.models.game_objects;
 
-import org.example.models.GameBoard;
 import org.example.models.Position;
 
 public class Mine extends GameObject {

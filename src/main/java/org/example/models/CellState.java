@@ -6,7 +6,8 @@ public enum CellState {
     MINE("\uD83D\uDCA3"),
     MISS("❌"),
     HIT("\uD83D\uDCA5"),
-    DESTROYED("✴");
+    DESTROYED("✴"),
+    SUBMARINE("⚓");
 
     private final String symbol;
 

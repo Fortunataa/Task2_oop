@@ -1,4 +1,7 @@
-package org.example.models;
+package org.example.models.game_objects;
+
+import org.example.models.CellState;
+import org.example.models.Position;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,6 @@ public class GameBoard {
     }
 
 
-
     /**
      * Создает начальную(пустую) доску
      */
@@ -37,6 +39,7 @@ public class GameBoard {
         }
     }
 
+    /*
     public boolean placeAnObject(GameObject object) {
         Position position = object.getPosition();
 
@@ -54,6 +57,8 @@ public class GameBoard {
 
         objects.add(object);
     }
+
+     */
 
     /**
      * Проверяет пустая ли клетка
