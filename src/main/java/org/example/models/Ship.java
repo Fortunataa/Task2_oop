@@ -101,8 +101,4 @@ public class Ship extends GameObject {
     public List<Position> getHealthyPositions() {
         return isDestroyed() ? new ArrayList<>() : new ArrayList<>(allPositions);
     }
-
-    public String toString() {
-        return String.format("Корабль [размер = %d, здоровье = %d, позиции = %s]", size, health, allPositions);
-    }
 }
