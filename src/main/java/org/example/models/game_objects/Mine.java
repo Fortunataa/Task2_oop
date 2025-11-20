@@ -51,6 +51,4 @@ public class Mine extends GameObject {
     public String toString() {
         return String.format("Мина {позиция = %s, активирована = %s, уничтожена = %s}", position, activated, destroyed);
     }
-
-
 }
