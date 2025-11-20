@@ -1,0 +1,45 @@
+Index: src/main/java/org/example/models/game_objects/GameObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.models.game_objects;\r\n\r\nimport org.example.models.GameBoard;\r\nimport org.example.models.Position;\r\n\r\npublic abstract class GameObject {\r\n    protected Position position;\r\n    protected boolean destroyed;\r\n    protected final String type;\r\n\r\n    public GameObject(Position position, String type) {\r\n        this.position = position;\r\n        this.destroyed = false;\r\n        this.type = type;\r\n    }\r\n\r\n    public abstract boolean canBePlacedObject(Position position, GameBoard board);\r\n\r\n    public Position getPosition() {\r\n        return position;\r\n    }\r\n\r\n    public String getType() {\r\n        return type;\r\n    }\r\n\r\n    public boolean isDestroyed() {\r\n        return destroyed;\r\n    }\r\n\r\n\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/models/game_objects/GameObject.java b/src/main/java/org/example/models/game_objects/GameObject.java
+--- a/src/main/java/org/example/models/game_objects/GameObject.java	(revision 9c1e8aa113045686f680d098846b3dba828bb549)
++++ b/src/main/java/org/example/models/game_objects/GameObject.java	(date 1763623210728)
+@@ -1,6 +1,5 @@
+ package org.example.models.game_objects;
+ 
+-import org.example.models.GameBoard;
+ import org.example.models.Position;
+ 
+ public abstract class GameObject {
+Index: src/main/java/org/example/models/game_objects/Ship.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.models.game_objects;\r\n\r\nimport org.example.models.GameBoard;\r\nimport org.example.models.Position;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class Ship extends GameObject {\r\n    private final int size;\r\n    private final boolean vertical;\r\n    private int health;\r\n    private final List<Position> allPositions;\r\n\r\n    /**\r\n     * Создание корабля\r\n     * @param size длина корабля\r\n     * @param vertical true - если корабль вертикальный, false - если горизонтальный\r\n     * @param startPosition \"носик\" корабля\r\n     */\r\n    public Ship(int size, boolean vertical, Position startPosition) {\r\n        super(startPosition, \"SHIP\");\r\n        this.size = size;\r\n        this.vertical = vertical;\r\n        this.health = size;\r\n        this.allPositions = calculateAllPositions(startPosition, size);\r\n    }\r\n\r\n    /**\r\n     * Считает список клеток, которые занимает корабль\r\n     * @param start \"носик\" корабля\r\n     * @param size длина корабля\r\n     * @return список клеток, которые занимает корабль\r\n     */\r\n    private List<Position> calculateAllPositions(Position start, int size) {\r\n        List<Position> positions = new ArrayList<>();\r\n\r\n        for (int i = 0; i < size; i++) {\r\n            if (isVertical()) {\r\n                positions.add(new Position(start.getX(), start.getY() + i));\r\n            } else {\r\n                positions.add(new Position(start.getX() + i, start.getY()));\r\n            }\r\n        }\r\n        return positions;\r\n    }\r\n\r\n    /**\r\n     * Проверяет, можно ли разместить корабль на доске\r\n     * @param position позиция корабля\r\n     * @param board доска\r\n     * @return true - если можно разместить, false - если нельзя\r\n     */\r\n    @Override\r\n    public boolean canBePlacedObject(Position position, GameBoard board) {\r\n        List<Position> testPosition = calculateAllPositions(position, size);\r\n\r\n        for (Position pos :  testPosition) {\r\n            if (!pos.isInPlayingField(board.getSize())) {\r\n                return false;\r\n            }\r\n\r\n            if (!board.isPositionEmpty(position)) {\r\n                return false;\r\n            }\r\n        }\r\n        return true;\r\n    }\r\n\r\n    /**\r\n     * Обрабатывает попадание в корабль\r\n     */\r\n    public void hittingInShip() {\r\n        if (health > 0) {\r\n            health--;\r\n        }\r\n    }\r\n\r\n    public boolean isVertical() {\r\n        return vertical;\r\n    }\r\n\r\n    @Override\r\n    public boolean isDestroyed() {\r\n        return health <= 0;\r\n    }\r\n\r\n    public int getSize() {\r\n        return size;\r\n    }\r\n\r\n    public int getHealth() {\r\n        return health;\r\n    }\r\n\r\n    public List<Position> getAllPositions() {\r\n        return allPositions;\r\n    }\r\n\r\n    /**\r\n     * Получает позиции, которые не повреждены\r\n     * @return если корабль уничтожен - возвращает пустой список, если нет - возвращает копию списка позиций корабля\r\n     */\r\n    public List<Position> getHealthyPositions() {\r\n        return isDestroyed() ? new ArrayList<>() : new ArrayList<>(allPositions);\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/models/game_objects/Ship.java b/src/main/java/org/example/models/game_objects/Ship.java
+--- a/src/main/java/org/example/models/game_objects/Ship.java	(revision 9c1e8aa113045686f680d098846b3dba828bb549)
++++ b/src/main/java/org/example/models/game_objects/Ship.java	(date 1763623210697)
+@@ -1,6 +1,5 @@
+ package org.example.models.game_objects;
+ 
+-import org.example.models.GameBoard;
+ import org.example.models.Position;
+ 
+ import java.util.ArrayList;
+Index: src/main/java/org/example/models/game_objects/Mine.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.models.game_objects;\r\n\r\nimport org.example.models.GameBoard;\r\nimport org.example.models.Position;\r\n\r\npublic class Mine extends GameObject {\r\n    private boolean activated;\r\n\r\n    public Mine(Position position) {\r\n        super(position, \"MINE\");\r\n        this.activated = false;\r\n    }\r\n\r\n    /**\r\n     * Проверяет, можно ли разместить мину\r\n     * @param position позиция мины\r\n     * @param board доска\r\n     * @return true - если мина в пределах поля и клетка, на которую ставим, пустая. False - если нет.\r\n     */\r\n    @Override\r\n    public boolean canBePlacedObject(Position position, GameBoard board) {\r\n        return position.isInPlayingField(board.getSize()) && board.isPositionEmpty(position);\r\n    }\r\n\r\n    /**\r\n     * Обработка попадания в мину\r\n     */\r\n    public void hittingMine() {\r\n        if (!activated) {\r\n            activated = true;\r\n            destroyed = true;\r\n            explode();\r\n        }\r\n    }\r\n\r\n    private void explode() {\r\n        System.out.println(\"\uD83D\uDCA5 Мина взорвалась на позиции \" + position);\r\n    }\r\n\r\n    public boolean isActivated() {\r\n        return activated;\r\n    }\r\n\r\n    /**\r\n     * Проверяет возможность активации мины\r\n     * @return true - если мина не активирована и не сломана, false - если нет.\r\n     */\r\n    public boolean canActivate() {\r\n        return !activated && !destroyed;\r\n    }\r\n\r\n    public String toString() {\r\n        return String.format(\"Мина {позиция = %s, активирована = %s, уничтожена = %s}\", position, activated, destroyed);\r\n    }\r\n\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/models/game_objects/Mine.java b/src/main/java/org/example/models/game_objects/Mine.java
+--- a/src/main/java/org/example/models/game_objects/Mine.java	(revision 9c1e8aa113045686f680d098846b3dba828bb549)
++++ b/src/main/java/org/example/models/game_objects/Mine.java	(date 1763623210713)
+@@ -1,6 +1,5 @@
+ package org.example.models.game_objects;
+ 
+-import org.example.models.GameBoard;
+ import org.example.models.Position;
+ 
+ public class Mine extends GameObject {
